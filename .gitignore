@@ -1,9 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # If you prefer the allow list template instead of the deny list, see community template:
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
 # Binaries for programs and plugins
 =======
+=======
+>>>>>>> 2cd704d (First commit)
 # Auto-generated .gitignore file.
 # See https://gowebly.org for more information.
 
@@ -45,12 +48,16 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Ignore by extensions.
+<<<<<<< HEAD
+>>>>>>> 2cd704d (First commit)
+=======
 >>>>>>> 2cd704d (First commit)
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 # Test binary, built with `go test -c`
@@ -65,6 +72,8 @@ lerna-debug.log*
 # Go workspace file
 go.work
 =======
+=======
+>>>>>>> 2cd704d (First commit)
 *.suo
 *.ntvs*
 *.njsproj
@@ -74,5 +83,9 @@ go.work
 *.lockb
 *.test
 *.tmp
+<<<<<<< HEAD
+*.out
+>>>>>>> 2cd704d (First commit)
+=======
 *.out
 >>>>>>> 2cd704d (First commit)

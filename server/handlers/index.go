@@ -11,7 +11,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-// indexViewHandler handles a view for the index page.
+// IndexViewHandler handles a view for the index page.
 func IndexViewHandler(c echo.Context) error {
 
 	// Set the response content type to HTML.
@@ -40,7 +40,7 @@ func IndexViewHandler(c echo.Context) error {
 
 }
 
-// showContentAPIHandler handles an API endpoint to show content.
+// ShowContentAPIHandler handles an API endpoint to show content.
 func ShowContentAPIHandler(c echo.Context) error {
 	// Check, if the current request has a 'HX-Request' header.
 	// For more information, see https://htmx.org/docs/#request-headers
@@ -52,7 +52,10 @@ func ShowContentAPIHandler(c echo.Context) error {
 	}
 
 	// Write HTML content.
-	c.Response().Write([]byte("<p>🎉 Yes, <strong>htmx</strong> is ready to use! (<code>GET /api/hello-world</code>)</p>"))
+	_, err := c.Response().Write([]byte("<p>🎉 Yes, <strong>htmx</strong> is ready to use! (<code>GET /api/hello-world</code>)</p>"))
+	if err != nil {
+		return err
+	}
 
 	return htmx.NewResponse().Write(c.Response().Writer)
 }

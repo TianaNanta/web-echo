@@ -1,21 +1,21 @@
-package main
+package server
 
 import (
 	"fmt"
+	"github.com/TianaNanta/web-echo/server/handlers"
 	"log/slog"
 	"net/http"
 	"strconv"
 	"time"
 
-	"github.com/TianaNanta/web-echo/handlers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
 	gowebly "github.com/gowebly/helpers"
 )
 
-// runServer runs a new HTTP server with the loaded environment variables.
-func runServer() error {
+// RunServer runs a new HTTP server with the loaded environment variables.
+func RunServer() error {
 	// Validate environment variables.
 	port, err := strconv.Atoi(gowebly.Getenv("BACKEND_PORT", "7000"))
 	if err != nil {
@@ -31,10 +31,8 @@ func runServer() error {
 	// Handle static files.
 	e.Static("/static", "./static")
 
-	// Handle index page view.
+	// Routes
 	e.GET("/", handlers.IndexViewHandler)
-
-	// Handle API endpoints.
 	e.GET("/api/hello-world", handlers.ShowContentAPIHandler)
 
 	// Create a new server instance with options from environment variables.
